@@ -23,7 +23,7 @@
     <version>7</version>
   </parent>
 
-  <groupId>com.google.dagger</groupId>
+  <groupId>im.lot.dagger</groupId>
   <artifactId>dagger-parent</artifactId>
   <packaging>pom</packaging>
   <version>2.1-SNAPSHOT</version>
@@ -62,15 +62,15 @@
   </properties>
 
   <scm>
-    <url>http://github.com/google/dagger/</url>
-    <connection>scm:git:git://github.com/google/dagger.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/google/dagger.git</developerConnection>
+    <url>http://github.im.lot.dagger/</url>
+    <connection>scm:git:git://github.im.lot.dagger.git</connection>
+    <developerConnection>scm:git:ssh://git@github.im.lot.dagger.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
     <system>GitHub Issues</system>
-    <url>http://github.com/google/dagger/issues</url>
+    <url>http://github.im.lot.dagger/issues</url>
   </issueManagement>
 
   <licenses>
