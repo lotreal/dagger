@@ -467,11 +467,11 @@ abstract class AbstractComponentWriter {
     }
     
     // No field needed for bindings with no dependencies or state.
-    Optional<MemberSelect> staticMemberSelect = staticMemberSelect(resolvedBindings);
-    if (staticMemberSelect.isPresent()) {
-      memberSelectSnippets.put(bindingKey, staticMemberSelect.get());
-      return;
-    }
+//    Optional<MemberSelect> staticMemberSelect = staticMemberSelect(resolvedBindings);
+//    if (staticMemberSelect.isPresent()) {
+//      memberSelectSnippets.put(bindingKey, staticMemberSelect.get());
+//      return;
+//    }
 
     Optional<String> bindingPackage = bindingPackageFor(resolvedBindings.bindings());
     boolean useRawType = bindingPackage.isPresent()

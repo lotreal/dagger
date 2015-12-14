@@ -74,7 +74,8 @@ abstract class MembersInjectionBinding extends Binding {
   }
 
   Strategy injectionStrategy() {
-    return injectionSites().isEmpty() ? Strategy.NO_OP : Strategy.INJECT_MEMBERS;
+    return Strategy.INJECT_MEMBERS;
+    // return injectionSites().isEmpty() ? Strategy.NO_OP : Strategy.INJECT_MEMBERS;
   }
 
   MembersInjectionBinding withoutParentInjectorRequest() {

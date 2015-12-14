@@ -110,7 +110,7 @@ final class MembersInjectorGenerator extends SourceFileGenerator<MembersInjectio
   @Override
   ImmutableSet<JavaWriter> write(ClassName generatedTypeName, MembersInjectionBinding binding) {
     // Empty members injection bindings are special and don't need source files.
-    if (binding.injectionSites().isEmpty()) {
+    if (binding.injectionStrategy().equals(MembersInjectionBinding.Strategy.NO_OP)) {
       return ImmutableSet.of();
     }
     Set<String> delegateMethods = new HashSet<>();
@@ -228,6 +228,11 @@ final class MembersInjectorGenerator extends SourceFileGenerator<MembersInjectio
     if (usesRawFrameworkTypes) {
       injectMembersWriter.annotate(SuppressWarnings.class).setValue("unchecked");
     }
+
+    injectMembersWriter.body().addSnippet(Joiner.on('\n').join(
+        "// instance.injectExtra = (Config) instance.getIntent().getSerializableExtra(\"config\");",
+        "// ButterKnife.bind(instance);"
+    ));
 
     return ImmutableSet.of(writer);
   }
