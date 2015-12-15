@@ -42,6 +42,8 @@ import dagger.internal.codegen.writer.TypeVariableName;
 import dagger.internal.codegen.writer.VariableWriter;
 import dagger.internal.codegen.writer.VoidName;
 import dagger.producers.Producer;
+import dm.diana.codegen.DianaGenerator;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
@@ -229,11 +231,7 @@ final class MembersInjectorGenerator extends SourceFileGenerator<MembersInjectio
       injectMembersWriter.annotate(SuppressWarnings.class).setValue("unchecked");
     }
 
-    injectMembersWriter.body().addSnippet(Joiner.on('\n').join(
-        "// instance.injectExtra = (Config) instance.getIntent().getSerializableExtra(\"config\");",
-        "// ButterKnife.bind(instance);"
-    ));
-
+    DianaGenerator.appendInjectMembers(injectMembersWriter, injectedTypeName);
     return ImmutableSet.of(writer);
   }
 
