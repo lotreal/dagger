@@ -42,7 +42,7 @@ import dagger.internal.codegen.writer.TypeVariableName;
 import dagger.internal.codegen.writer.VariableWriter;
 import dagger.internal.codegen.writer.VoidName;
 import dagger.producers.Producer;
-import dm.diana.codegen.DianaGenerator;
+import dm.dagger.internal.codegen.DianaGenerator;
 
 import java.util.HashSet;
 import java.util.List;

@@ -24,7 +24,7 @@ import dagger.Module;
 import dagger.Provides;
 import dagger.producers.ProducerModule;
 import dagger.producers.Produces;
-import dm.diana.codegen.DianaProcessingStep;
+import dm.dagger.internal.codegen.DianaProcessingStep;
 
 import java.lang.annotation.Annotation;
 import java.util.EnumSet;
