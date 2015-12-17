@@ -24,7 +24,7 @@ import dagger.Module;
 import dagger.Provides;
 import dagger.producers.ProducerModule;
 import dagger.producers.Produces;
-import dm.diana.codegen.InjectExtraProcessingStep;
+import dm.diana.codegen.DianaProcessingStep;
 
 import java.lang.annotation.Annotation;
 import java.util.EnumSet;
@@ -178,7 +178,7 @@ public final class ComponentProcessor extends BasicAnnotationProcessor {
             keyFormatter);
 
     return ImmutableList.<ProcessingStep>of(
-        new InjectExtraProcessingStep(),
+        new DianaProcessingStep(),
         new MapKeyProcessingStep(messager, types, mapKeyValidator, mapKeyGenerator),
         new InjectProcessingStep(
             messager,
